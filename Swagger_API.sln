@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swagger_API", "Swagger_API\Swagger_API.csproj", "{15965EE5-AB42-4A43-8108-3411ADA6E638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nunit.Test", "Nunit.Test\Nunit.Test.csproj", "{E2FD7FA3-4577-483D-9FEF-6D67397E887B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15965EE5-AB42-4A43-8108-3411ADA6E638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15965EE5-AB42-4A43-8108-3411ADA6E638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15965EE5-AB42-4A43-8108-3411ADA6E638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15965EE5-AB42-4A43-8108-3411ADA6E638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2FD7FA3-4577-483D-9FEF-6D67397E887B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FD7FA3-4577-483D-9FEF-6D67397E887B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FD7FA3-4577-483D-9FEF-6D67397E887B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FD7FA3-4577-483D-9FEF-6D67397E887B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E896674C-61F2-44A3-A850-47CFE6FF361C}
+	EndGlobalSection
+EndGlobal
