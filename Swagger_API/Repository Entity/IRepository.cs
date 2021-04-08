@@ -12,7 +12,7 @@ namespace Swagger_API.Repository_Entity
     public interface IRepository
     {
         public bool GetBybatchIdAsync(string id);
-        public ActionResult<List<ResponseBatchViewModel>> GetDetail(string id);
+        public List<ResponseBatchViewModel> GetDetail(string id);
         public string SaveBatchFile(CreateBatchViewModel entity);
     }
 }

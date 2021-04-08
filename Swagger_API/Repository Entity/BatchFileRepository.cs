@@ -32,7 +32,7 @@ namespace Swagger_API.Repository_Entity
             }
             return true;
         }
-        public string SaveBatchFile(CreateBatchViewModel batchfile)
+        public  string SaveBatchFile(CreateBatchViewModel batchfile)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace Swagger_API.Repository_Entity
             }
 
         }
-        public ActionResult<List<ResponseBatchViewModel>> GetDetail(string batchID)
+        public List<ResponseBatchViewModel> GetDetail(string batchID)
         { 
                 var batchdetail = (from e in _CRUDContext.BatchTables
                                    join c in _CRUDContext.BatchAclTables on e.BatchID equals c.BatchID

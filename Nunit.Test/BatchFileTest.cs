@@ -1,4 +1,6 @@
-﻿using Moq;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
 using NUnit.Framework;
 using Swagger_API.Context;
 using Swagger_API.Controllers;
@@ -14,40 +16,29 @@ namespace Nunit.Test
     {
         //private IRepository batchFileRepository;
 
-        private BatchFileController controller;
-        private Mock<IRepository> irepositoryMock;
-        private Mock<BatchFileRepository> batchFileRepositoryMock;
+        protected BatchFileController controller;
+        protected Mock<IRepository> irepositoryMock;
+        protected Mock<BatchFileRepository> batchFileRepositoryMock;
+        protected Mock<HttpContext> httpContext;
 
         [SetUp]
-        public void Setup()
+        protected virtual void Given()
         {
-
             irepositoryMock = new Mock<IRepository>();
             batchFileRepositoryMock = new Mock<BatchFileRepository>();
-
-         
             controller = new BatchFileController(irepositoryMock.Object);
-        }
+            httpContext=new Mock<HttpContext>();
 
-        [Test]
-        public void Test_Get_Batchid_details()
-        {
-            string batchid = "3d04f587-96b9-4f67-a7aa-d846ce418b34";
-            var result = controller.Get(batchid);
-            Assert.IsNotNull(result);
-        }
-        [Test]
-        //public void Test_Get_Batchid_details_2()
+    }
+
+        //protected virtual void Setup()
         //{
-        //    string batchid = "3d04f587-96b9-4f67-a7aa-d846ce418";
-        //    var result = controller.Get(batchid);
-        //    Assert.IsNotNull(result);
+
+        //    controller = new BatchFileController(irepositoryMock.Object)
+        //    { ControllerContext = new ControllerContext() };
+        //    controller.ControllerContext.HttpContext = httpContext.Object;
         //}
+        
 
-        [Ignore("Ignore Test")]
-        public void Test_To_Ignore()
-        {
-
-        }
     }
 }

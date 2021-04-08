@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Swagger_API.Context;
@@ -30,7 +31,8 @@ namespace Swagger_API.Controllers
 
         //GET api/<BatchFileController>/5
     [HttpGet("batch/{batchID}")]
-        public ActionResult<List<ResponseBatchViewModel>> Get(string batchID, CancellationToken ct = default(CancellationToken))
+        
+        public ActionResult Get(string batchID, CancellationToken ct = default(CancellationToken))
         {
             if (batchFileRepository.GetBybatchIdAsync(batchID) == false)
             {
@@ -39,7 +41,7 @@ namespace Swagger_API.Controllers
             try
             {
                 var batchdetail = batchFileRepository.GetDetail(batchID);
-                return Ok(batchdetail.Value);
+                return Ok(batchdetail.FirstOrDefault());
             }
             catch
             {
@@ -55,14 +57,16 @@ namespace Swagger_API.Controllers
             try
             {
                 var batchid = batchFileRepository.SaveBatchFile(batchfile);
-                return Ok(new { batchid });
 
+                if (batchid == null)
+                 { return BadRequest(); }
+
+                return Ok(new { batchid });
             }
             catch
             {
                 return BadRequest();
             }
-
         }
 
     }
